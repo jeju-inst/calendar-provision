@@ -20,6 +20,23 @@ Roster / Group Config
   -> selectable people, departments, temporary groups, display names
 ```
 
+## Public Snapshot Boundary
+
+This public repository should remain provider-aware but deployment-neutral.
+
+Keep implementation examples concrete enough to run with the reference stack,
+but avoid committing organization-specific operational state:
+
+- no real rosters
+- no real domains
+- no launchd or tunnel deployment files
+- no incident logs
+- no private board IDs unless intentionally documented as examples
+- no generated project catalogs from a live organization
+
+When importing changes from a private deployment, preserve reusable provider
+contracts and replace private values with examples before publishing.
+
 ## Calendar Provider
 
 The current implementation reads Google Calendar through a service account with

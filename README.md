@@ -20,6 +20,24 @@ This public repository is a sanitized snapshot. It intentionally does not
 include real staff rosters, production launchd files, private domains, tokens,
 or operating notes from the source deployment.
 
+## Snapshot Maintenance
+
+This repository is intended to be maintained as a public-safe snapshot of a
+private operational deployment.
+
+Feature work should land in the private operational repository first. Reusable
+changes can then be exported here after removing:
+
+- real staff rosters
+- private domains
+- local deployment files
+- incident notes
+- service-account paths and secrets
+
+The exported code should preserve the provider contracts documented in
+`docs/architecture.md` so other organizations can adapt the reference stack to
+their own SaaS choices.
+
 ## Core Model
 
 The app assumes three operational data sources:
