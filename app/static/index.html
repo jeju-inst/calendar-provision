@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>일정조회</title>
+    <link rel="icon" href="/favicon.ico?v=2" />
+    <link rel="icon" type="image/png" sizes="68x68" href="/static/icons/calendar_icon_dark_68.png?v=2" />
+    <link rel="apple-touch-icon" sizes="128x128" href="/static/icons/calendar_icon_light_128.png" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-head">
+          <h1 id="app-title">JI Calendar Viewer</h1>
+          <p id="setup-state" class="muted"></p>
+        </div>
+
+        <div class="sidebar-scroll">
+          <section class="panel">
+            <div class="panel-title panel-title-row">
+              <span>연구실 그룹</span>
+              <button id="clear-selection-sidebar" class="clear-button sidebar-clear-button" type="button" hidden>초기화</button>
+            </div>
+            <div id="group-list" class="stack"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-title">검색</div>
+            <input id="selection-search" class="search" type="search" placeholder="이름, 과제코드, PM, 과제명 검색" />
+          </section>
+
+          <section class="panel">
+            <div class="panel-title">연구직 선택</div>
+            <div id="person-list" class="stack person-list"></div>
+          </section>
+
+          <section class="panel" id="project-panel">
+            <div class="panel-title">과제 선택</div>
+            <div id="project-list" class="stack project-list"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-title">캘린더 유형</div>
+            <div id="type-filters" class="filter-grid"></div>
+          </section>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="toolbar">
+          <button id="menu-button" class="icon-button menu-button" type="button" aria-label="필터 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="toolbar-meta">
+            <h2 id="selection-title">선택 없음</h2>
+            <p id="selection-subtitle" class="muted">좌측에서 그룹 또는 연구직을 선택하세요.</p>
+            <div id="selection-summary" class="selection-summary" hidden>
+              <span id="selection-count" class="selection-count"></span>
+              <span id="selection-detail" class="selection-detail"></span>
+              <span id="sync-status" class="status-line"></span>
+            </div>
+            <div id="service-alert" class="service-alert" hidden></div>
+          </div>
+          <div class="toolbar-actions">
+            <label class="split-toggle">
+              <input id="overlap-split-toggle" type="checkbox" />
+              <span>겹침분할</span>
+            </label>
+            <select id="view-mode" class="view-mode-select" aria-label="보기 방식">
+              <option value="week" selected>주간</option>
+              <option value="day">일별</option>
+            </select>
+            <button id="prev-week" class="icon-button" type="button" aria-label="이전 주">&larr;</button>
+            <button id="today-button" class="pill-button" type="button">이번 주</button>
+            <button id="next-week" class="icon-button" type="button" aria-label="다음 주">&rarr;</button>
+            <div id="week-label" class="week-label"></div>
+          </div>
+        </header>
+
+        <section class="calendar-shell">
+          <div id="diagnostics" class="diagnostics" hidden></div>
+          <div id="calendar-header" class="calendar-header"></div>
+          <div id="calendar-grid" class="calendar-grid"></div>
+        </section>
+      </main>
+    </div>
+    <button id="sidebar-backdrop" class="sidebar-backdrop" type="button" aria-label="필터 닫기" hidden></button>
+    <div id="hover-preview" class="hover-preview" hidden></div>
+
+    <template id="event-template">
+      <article class="event-card">
+        <div class="event-meta">
+          <span class="event-person"></span>
+          <span class="event-type"></span>
+        </div>
+        <div class="event-title"></div>
+        <div class="event-time"></div>
+        <div class="event-location"></div>
+      </article>
+    </template>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

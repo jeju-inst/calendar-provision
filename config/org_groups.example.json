@@ -1,0 +1,48 @@
+{
+  "title": "Calendar Viewer",
+  "timezone": "Asia/Seoul",
+  "groups": [
+    {
+      "id": "leadership",
+      "name": "Leadership",
+      "members": [
+        "director@example.com",
+        "manager@example.com"
+      ]
+    },
+    {
+      "id": "research-team",
+      "name": "Research Team",
+      "members": [
+        "researcher1@example.com",
+        "researcher2@example.com"
+      ]
+    }
+  ],
+  "people": [
+    {
+      "email": "director@example.com",
+      "name": "Director",
+      "role": "leadership",
+      "calendar_name": "Director"
+    },
+    {
+      "email": "manager@example.com",
+      "name": "Manager",
+      "role": "leadership",
+      "calendar_name": "Manager"
+    },
+    {
+      "email": "researcher1@example.com",
+      "name": "Researcher One",
+      "role": "research-team",
+      "calendar_name": "Researcher One"
+    },
+    {
+      "email": "researcher2@example.com",
+      "name": "Researcher Two",
+      "role": "research-team",
+      "calendar_name": "Researcher Two"
+    }
+  ]
+}\n

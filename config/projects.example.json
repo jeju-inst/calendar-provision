@@ -1,0 +1,26 @@
+{
+  "source": {
+    "progress_board_id": "1234567890",
+    "relation_column_id": "board_relation_xxxxx",
+    "code_column_id": "lookup_code",
+    "pm_column_id": "lookup_pm",
+    "synced_at": "2026-01-01T00:00:00+00:00"
+  },
+  "projects": [
+    {
+      "code": "26P01",
+      "pm": "Project Manager",
+      "name": "Example Research Project",
+      "monday_item_ids": [
+        "12345678901",
+        "12345678902"
+      ],
+      "source_project_item_ids": [
+        "98765432101"
+      ],
+      "source_project_urls": [
+        "https://example.monday.com/boards/1234567890/pulses/98765432101"
+      ]
+    }
+  ]
+}\n
